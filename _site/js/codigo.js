@@ -36,6 +36,8 @@ function setCurrentPosition(pos){
   map.panTo(position);
 }
 
+
+
 function watchCurrentPosition(){
   var positionTimer = navigator.geolocation.watchPosition(
     function(position){
@@ -44,6 +46,7 @@ function watchCurrentPosition(){
 }
 
 function setMarkerPosition(marker, position){
+  console.log(position);
   marker.setPosition(
     new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
   );
