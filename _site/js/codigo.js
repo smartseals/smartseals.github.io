@@ -1,7 +1,10 @@
 var map,
     currentPositionMarker,
-    mapCenter = new google.maps.LatLng(10, -72),
+    mapCenter = new google.maps.LatLng(13, -71),
     map;
+
+
+
 
 function initLocationProcedure(){
   initilizeMap();
@@ -15,15 +18,21 @@ function initLocationProcedure(){
 
 function initilizeMap(){
   map = new google.maps.Map(document.getElementById('map-canvas'),{
-    zoom: 10,
+    zoom: 16,
     center: mapCenter,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
+  google.maps.event.addListener(map,'zoom_changed',function(){
+  var zoomLevel = map.getZoom();
+  console.log(zoomLevel);
+});
 }
+
 
 function displayAndWatch(position){
   setCurrentPosition(position);
   watchCurrentPosition();
+
 }
 
 function setCurrentPosition(pos){
@@ -65,18 +74,24 @@ function watchCurrentPosition(){
       setMarkerPosition(currentPositionMarker, position);
   }, geo_error, geo_options); 
 }
+ 
+ 
 
 function setMarkerPosition(marker, position){
   console.log(position);
-  marker.setPosition(
-    new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-  );
+  var markerPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+  marker.setPosition(markerPosition);
+
+  map.panTo(markerPosition);
 }
 
 function locError(){
   alert("The current position could not be found");
 }
 
+
 $(document).ready(function(){
   initLocationProcedure();
 });
+
+
