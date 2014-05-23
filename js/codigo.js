@@ -71,7 +71,7 @@ function setMarkerPosition(marker, position){
   marker.setPosition(
     new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
   );
-  map.panto(position);
+  map.panTo(position);
 }
 
 function locError(){
