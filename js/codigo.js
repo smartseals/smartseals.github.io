@@ -3,9 +3,6 @@ var map,
     mapCenter = new google.maps.LatLng(13, -71),
     map;
 
-
-
-
 function initLocationProcedure(){
   initilizeMap();
   if (navigator.geolocation){

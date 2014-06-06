@@ -3,9 +3,6 @@ var map,
     mapCenter = new google.maps.LatLng(13, -71),
     map;
 
-
-
-
 function initLocationProcedure(){
   initilizeMap();
   if (navigator.geolocation){
@@ -60,8 +57,8 @@ function getCircle(){
 
 var geo_options = {
   enableHighAccuracy: true,
-  maximumAge: 15000,
-  timeout: 5000
+  maximumAge: 0,
+  timeout:Infinity 
 };
 
 function geo_error(){
