@@ -25,11 +25,9 @@ function initilizeMap(){
 });
 }
 
-
 function displayAndWatch(position){
   setCurrentPosition(position);
   watchCurrentPosition();
-
 }
 
 function setCurrentPosition(pos){
@@ -57,8 +55,8 @@ function getCircle(){
 
 var geo_options = {
   enableHighAccuracy: true,
-  maximumAge: 0,
-  timeout:Infinity 
+  maximumAge: 3000,
+  timeout: 10000 
 };
 
 function geo_error(){
@@ -72,20 +70,16 @@ function watchCurrentPosition(){
   }, geo_error, geo_options); 
 }
  
- 
-
 function setMarkerPosition(marker, position){
   console.log(position);
   var markerPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
   marker.setPosition(markerPosition);
-
   map.panTo(markerPosition);
 }
 
 function locError(){
   alert("The current position could not be found");
 }
-
 
 $(document).ready(function(){
   initLocationProcedure();
