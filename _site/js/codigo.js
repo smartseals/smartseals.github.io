@@ -55,7 +55,7 @@ function getCircle(){
 
 var geo_options = {
   enableHighAccuracy: true,
-  maximumAge: 3000,
+  maximumAge: 300,
   timeout: 10000 
 };
 
