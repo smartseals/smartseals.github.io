@@ -1,6 +1,6 @@
 ---
 layout: portfolio_entry
-title: Wing and a Prayer
+title: Etiquetas antitamper
 image: /img/antitamperseal.jpg
 ---
 

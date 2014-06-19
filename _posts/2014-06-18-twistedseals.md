@@ -1,6 +1,6 @@
 ---
 layout: portfolio_entry
-title: Wing and a Prayer
+title: Sellos Rotoseals
 image: /img/twisterseals.jpg
 ---
 Sellos Rotoseals con altas capacidades antifraude
